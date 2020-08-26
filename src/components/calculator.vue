@@ -3,7 +3,7 @@
     <div class="calculator">
       <div class="display">{{current || 0}}</div>
       <div class="btn" v-on:click="clear">C</div>
-      <div class="btn" v-on:click="sign">+/-</div>
+      <div class="btn change-sign" v-on:click="sign">+/-</div>
       <div class="btn" v-on:click="percent">%</div>
       <div class="btn operator" v-on:click="divide">/</div>
       <div class="btn" v-on:click="append('7')">7</div>
@@ -172,6 +172,9 @@ export default {
 .btn:hover {
   background: linear-gradient(315deg, #1b303f, #20394b);
   box-shadow: -5px -5px 13px #172835, 5px 5px 13px #254257;
+}
+.change-sign{
+  font-size:35px;
 }
 #zero {
   grid-column: 1/3 !important;
