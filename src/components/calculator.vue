@@ -128,7 +128,6 @@ export default {
   border-radius: 35px;
   background-color: #1e3546;
   margin: auto;
-  max-width:300px;
 }
 .calculator {
   max-width: 300px;
