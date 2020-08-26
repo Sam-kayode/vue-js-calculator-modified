@@ -130,7 +130,7 @@ export default {
   margin: auto;
 }
 .calculator {
-  width: 330px;
+  max-width: 330px;
   display: grid;
   font-size: 40px;
   grid-template-columns: repeat(4, 1fr);
