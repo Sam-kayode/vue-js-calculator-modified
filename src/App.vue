@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Neumorphic Calculator</h1>
+<Calculator/>
+    <h3><strong><span>&copy;</span>2020</strong>  Sam-kay</h3>
   </div>
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Calculator from './components/calculator.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name:'app',
+  components:{
+    Calculator
   }
 }
 </script>
 
-<style>
+<style >
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+html{
+    background-color: #aebdcc;
+
+}
+
+h1{
+  font-family:'Courier New', Courier, monospace;
+  font-size:50px;
+}
+
+span{
+  font-size:25px;
+}
+
 </style>
