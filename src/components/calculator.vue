@@ -2,25 +2,25 @@
   <div id="calc">
     <div class="calculator">
       <div class="display">{{current || 0}}</div>
-      <div class="btn" @click="clear">C</div>
-      <div class="btn" @click="sign">+/-</div>
-      <div class="btn" @click="percent">%</div>
-      <div class="btn operator" @click="divide">/</div>
-      <div class="btn" @click="append('7')">7</div>
-      <div class="btn" @click="append('8')">8</div>
-      <div class="btn" @click="append('9')">9</div>
-      <div class="btn operator" @click="times">x</div>
-      <div class="btn" @click="append('4')">4</div>
-      <div class="btn" @click="append('5')">5</div>
-      <div class="btn" @click="append('6')">6</div>
-      <div class="btn operator" @click="minus">-</div>
-      <div class="btn" @click="append('1')">1</div>
-      <div class="btn" @click="append('2')">2</div>
-      <div class="btn" @click="append('3')">3</div>
-      <div class="btn operator" @click="add">+</div>
-      <div class="btn" id="zero" @click="append('0')">0</div>
-      <div class="btn" @click="dot">.</div>
-      <div class="btn operator" @click="equal">=</div>
+      <div class="btn" v-on:click="clear">C</div>
+      <div class="btn" v-on:click="sign">+/-</div>
+      <div class="btn" v-on:click="percent">%</div>
+      <div class="btn operator" v-on:click="divide">/</div>
+      <div class="btn" v-on:click="append('7')">7</div>
+      <div class="btn" v-on:click="append('8')">8</div>
+      <div class="btn" v-on:click="append('9')">9</div>
+      <div class="btn operator" v-on:click="times">x</div>
+      <div class="btn" v-on:click="append('4')">4</div>
+      <div class="btn" v-on:click="append('5')">5</div>
+      <div class="btn" v-on:click="append('6')">6</div>
+      <div class="btn operator" v-on:click="minus">-</div>
+      <div class="btn" v-on:click="append('1')">1</div>
+      <div class="btn" v-on:click="append('2')">2</div>
+      <div class="btn" v-on:click="append('3')">3</div>
+      <div class="btn operator" v-on:click="add">+</div>
+      <div class="btn" id="zero" v-on:click="append('0')">0</div>
+      <div class="btn" v-on:click="dot">.</div>
+      <div class="btn operator" v-on:click="equal">=</div>
     </div>
     
   </div>
@@ -166,7 +166,7 @@ export default {
   border: px solid #1e3546;
   font-size: 40px;
   font-weight: lighter;
-  min-width:50px
+  max-width:50px;
 }
 
 .btn:hover {
@@ -175,6 +175,7 @@ export default {
 }
 #zero {
   grid-column: 1/3 !important;
+  max-width:300px;
 }
 
 .operator {
