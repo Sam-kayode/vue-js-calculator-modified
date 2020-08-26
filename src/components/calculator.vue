@@ -166,6 +166,7 @@ export default {
   border: px solid #1e3546;
   font-size: 40px;
   font-weight: lighter;
+  min-width:50px
 }
 
 .btn:hover {
