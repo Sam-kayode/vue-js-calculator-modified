@@ -128,9 +128,10 @@ export default {
   border-radius: 35px;
   background-color: #1e3546;
   margin: auto;
+  max-width:300px;
 }
 .calculator {
-  max-width: 330px;
+  max-width: 300px;
   display: grid;
   font-size: 40px;
   grid-template-columns: repeat(4, 1fr);
