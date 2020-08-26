@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <h1>Neumorphic Calculator</h1>
+    <div id="bugs"><h3>current bugs:</h3>  
+    you've gotta press the C button to reset the calc afer the qual to sign  and some other issues but such will def be corrected as I make progress</div>
 <Calculator/>
     <h3><strong><span>&copy;</span>2020</strong>  Sam-kay</h3>
   </div>
@@ -38,6 +40,12 @@ h1{
 
 span{
   font-size:25px;
+}
+#bugs{
+  max-width:150px;
+  position:fixed;
+top:250px;
+
 }
 
 </style>
