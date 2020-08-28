@@ -22,7 +22,6 @@
       <div class="btn" v-on:click="dot">.</div>
       <div class="btn operator" v-on:click="equal">=</div>
     </div>
-    
   </div>
 </template>
 
@@ -30,17 +29,21 @@
 export default {
   data() {
     return {
+      mostPrevious: null,
       previous: null,
       current: "",
       operator: null,
       operatorClicked: false,
       memory: null,
+      equality: false,
+      mostCurrent: null,
     };
   },
   methods: {
     clear() {
       this.current = "";
-      this.previous= "";
+      this.previous = "";
+      this.mostPrevious = "";
     },
     sign() {
       if (this.current.charAt(0) === "-") {
@@ -56,8 +59,13 @@ export default {
       if (this.operatorClicked) {
         this.current = "";
         this.operatorClicked = false;
+        //this.equality = false;
       }
-
+      if (this.equality) {
+        this.current = "";
+        this.mostPrevious = null;
+        this.equality=false;
+      }
       this.current = `${this.current}${number}`;
     },
     dot() {
@@ -68,34 +76,38 @@ export default {
     setPrevious() {
       this.previous = this.current;
       this.operatorClicked = true;
+      if (this.equality) {
+        this.previous = this.mostPrevious;
+      }
+      this.equality = false;
     },
     divide() {
-        if (this.current !== "" && this.previous !== "") {
+      if (this.current !== "" && this.previous !== "") {
         this.current = `${this.operator(
           parseFloat(this.previous),
           parseFloat(this.current)
         )}`;
-      } 
+      }
       this.operator = (a, b) => a / b;
       this.setPrevious();
     },
     times() {
-       if (this.current !== "" && this.previous !== "") {
+      if (this.current !== "" && this.previous !== "") {
         this.current = `${this.operator(
           parseFloat(this.previous),
           parseFloat(this.current)
         )}`;
-      } 
+      }
       this.operator = (a, b) => a * b;
       this.setPrevious();
     },
     minus() {
-       if (this.current !== "" && this.previous !== "") {
+      if (this.current !== "" && this.previous !== "") {
         this.current = `${this.operator(
           parseFloat(this.previous),
           parseFloat(this.current)
         )}`;
-      } 
+      }
       this.operator = (a, b) => a - b;
       this.setPrevious();
     },
@@ -105,18 +117,26 @@ export default {
           parseFloat(this.previous),
           parseFloat(this.current)
         )}`;
-      } 
-        this.operator = (a, b) => a + b;
-        this.setPrevious();
-      
+      }
+      this.operator = (a, b) => a + b;
+      this.setPrevious();
     },
     equal() {
-      this.current = `${this.operator(
-        parseFloat(this.previous),
-        parseFloat(this.current)
-      )}`;
-      this.previous = null;
+      if (!this.equality) {
+        //this is to prevent the equl to button from activating twicw
+        this.current = `${this.operator(
+          parseFloat(this.previous),
+          parseFloat(this.current)
+        )}`;
+
+        this.equality = true;
+        this.mostPrevious = this.current;
+        this.previous = "";
+      }
     },
+  },
+  created:function() {
+    this.clear();
   },
 };
 </script>
@@ -166,19 +186,19 @@ export default {
   border: px solid #1e3546;
   font-size: 40px;
   font-weight: lighter;
-  max-width:50px;
+  max-width: 50px;
 }
 
 .btn:hover {
   background: linear-gradient(315deg, #1b303f, #20394b);
   box-shadow: -5px -5px 13px #172835, 5px 5px 13px #254257;
 }
-.change-sign{
-  font-size:35px;
+.change-sign {
+  font-size: 35px;
 }
 #zero {
   grid-column: 1/3 !important;
-  max-width:300px;
+  max-width: 300px;
 }
 
 .operator {

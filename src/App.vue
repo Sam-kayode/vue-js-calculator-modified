@@ -9,7 +9,7 @@
       </strong> Sam-kay
     </h3>
     <div id="bugs">
-      <h3>current bugs:</h3>you've gotta press the C button to reset the calc afer the qual to sign and some other issues but such will def be corrected as I make progress
+    <!--   <h3>current bugs:</h3>you've gotta press the C button to reset the calc afer the equal to sign and some other issues but such will def be corrected as I make progress -->
     </div>
   </div>
 </template>
