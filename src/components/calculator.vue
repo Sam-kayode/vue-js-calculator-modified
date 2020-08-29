@@ -3,24 +3,24 @@
     <div class="calculator">
       <div class="display">{{current || 0}}</div>
       <div class="btn" v-on:click="clear">C</div>
-      <div class="btn change-sign" v-on:click="sign">+/-</div>
-      <div class="btn" v-on:click="percent">%</div>
-      <div class="btn operator" v-on:click="divide">/</div>
+      <div class="btn change-sign" v-on:click="sign">&plusmn;</div>
+      <div class="btn" v-on:click="percent">&percnt;</div>
+      <div class="btn operator" v-on:click="divide">&divide;</div>
       <div class="btn" v-on:click="append('7')">7</div>
       <div class="btn" v-on:click="append('8')">8</div>
       <div class="btn" v-on:click="append('9')">9</div>
-      <div class="btn operator" v-on:click="times">x</div>
+      <div class="btn operator" v-on:click="times">&times;</div>
       <div class="btn" v-on:click="append('4')">4</div>
       <div class="btn" v-on:click="append('5')">5</div>
       <div class="btn" v-on:click="append('6')">6</div>
-      <div class="btn operator" v-on:click="minus">-</div>
+      <div class="btn operator" v-on:click="minus">&minus;</div>
       <div class="btn" v-on:click="append('1')">1</div>
       <div class="btn" v-on:click="append('2')">2</div>
       <div class="btn" v-on:click="append('3')">3</div>
-      <div class="btn operator" v-on:click="add">+</div>
+      <div class="btn operator" v-on:click="add">&plus;</div>
       <div class="btn" id="zero" v-on:click="append('0')">0</div>
       <div class="btn" v-on:click="dot">.</div>
-      <div class="btn operator" v-on:click="equal">=</div>
+      <div class="btn operator" v-on:click="equal">&equals;</div>
     </div>
   </div>
 </template>
