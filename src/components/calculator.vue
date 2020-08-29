@@ -3,7 +3,7 @@
     <div class="calculator">
       <div class="display">{{current || 0}}</div>
       <div class="btn" v-on:click="clear">C</div>
-      <div class="btn change-sign" v-on:click="sign">&plusmn;</div>
+      <div class="btn change-sign" v-on:click="sign">+/-</div>
       <div class="btn" v-on:click="percent">&percnt;</div>
       <div class="btn operator" v-on:click="divide">&divide;</div>
       <div class="btn" v-on:click="append('7')">7</div>
